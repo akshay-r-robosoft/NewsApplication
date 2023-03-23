@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">NewsApplication</string>
+    <string name="api_key">7ceb31d0b9b04cff81f681dd1558ae46</string>
+    <string name="lab_top_news">Top News</string>
+    <string name="lab_loading">Loading…</string>
+    <string name="lab_popular_news">Popular News</string>
+</resources>

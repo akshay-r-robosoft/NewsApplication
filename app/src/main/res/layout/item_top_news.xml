@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.newsapplication.data.model.Article" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtHeader"
+            style="@style/BoldTextView"
+            android:text="@string/lab_top_news"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:visibility="@{data.wantsToShowHeader ? View.VISIBLE : View.GONE}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="#5305FF"
+            android:visibility="@{data.wantsToShowHeader ? View.VISIBLE : View.GONE}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtHeader" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgThumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_170sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:scaleType="centerInside"
+            app:imageUrl="@{data.urlToImage}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/divider"
+            tools:src="@tools:sample/avatars" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTitle"
+            style="@style/TitleTextView"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="@{data.title}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgThumbnail"
+            tools:text="Since the Pune police’s crackdown on Maoist organizations and naxal supporters, a lot is being discussed about the action taken against Naxalites during the UPA regime.Today, Chidambaram…" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtDetails"
+            style="@style/DescriptionTextView"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:text="@{data.description}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle"
+            tools:text="Since the Pune police’s crackdown on Maoist organizations and naxal supporters, a lot is being discussed about the action taken against Naxalites during the UPA regime.Today, Chidambaram…" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtSource"
+            style="@style/NewsSourceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:paddingHorizontal="@dimen/_20sdp"
+            android:paddingVertical="@dimen/_2sdp"
+            android:text="@{data.source.name}"
+            app:layout_constraintBottom_toBottomOf="@+id/imgBookmark"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imgBookmark"
+            tools:text="CNN" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgBookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_bookmark"
+            android:paddingHorizontal="@dimen/_10sdp"
+            android:paddingVertical="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDetails"
+            app:srcCompat="@drawable/ic_bookmark" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

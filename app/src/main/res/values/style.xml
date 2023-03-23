@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BoldTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="fontFamily">@font/inter_bold</item>
+        <item name="android:textSize">@dimen/_18ssp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TitleTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="fontFamily">@font/inter_semi_bold</item>
+        <item name="android:textSize">@dimen/_14ssp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="DescriptionTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:textSize">@dimen/_13ssp</item>
+        <item name="android:textColor">@color/clr_description</item>
+    </style>
+
+    <style name="NewsSourceTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="fontFamily">@font/inter_regular</item>
+        <item name="android:textSize">@dimen/_12ssp</item>
+        <item name="android:background">@drawable/bg_source</item>
+        <item name="android:textColor">@color/clr_description</item>
+    </style>
+
+</resources>
